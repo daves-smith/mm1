@@ -1,0 +1,35 @@
+/* 
+ * Enter your Custom Javascript Functions here
+*/
+
+jQuery(document).ready(function($){
+	$('.fancybox').fancybox( {
+		maxWidth	: 800,
+		maxHeight	: 600,
+		fitToView	: false,
+		width		: '70%',
+		height		: '70%',
+		autoSize	: false,
+		closeClick	: false,
+		openEffect	: 'none',
+		closeEffect	: 'none'	
+			
+	}); 
+	$('.menu-navigate,.sidebar-close').click(function() { 
+		$('.pagesidebar').toggleClass('open');
+		$('.pusher').toggleClass('open');
+	});
+	
+
+	 $(window).scroll(function(event){
+    var st = $(this).scrollTop();
+    if($('header').hasClass('fix')){
+      var headerheight=$('header').height();
+      if(st > headerheight){
+        $('header').addClass('fixed');
+      }else{
+        $('header').removeClass('fixed');
+      }
+    }
+  });
+});
